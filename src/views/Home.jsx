@@ -4,8 +4,8 @@ import { Switch, Route, Redirect } from 'react-router-dom'
 import './Home.less'
 // 引入各模块组件
 import HomeFirst from './HomeFirst'
-import HomeWork from './HomeWork'
-import HomeActive from './HomeActive'
+import HomeClassify from './HomeClassify'
+import HomeCart from './HomeCart'
 import HomeCenter from './HomeCenter'
 
 class Home extends React.PureComponent {
@@ -14,8 +14,8 @@ class Home extends React.PureComponent {
   }
   TableItems = [
     { title: '首页', id: 'first', content: '首页' },
-    { title: '办公', id: 'work', content: '办公' },
-    { title: '活动', id: 'active', content: '活动' },
+    { title: '分类', id: 'classify', content: '分类' },
+    { title: '购物车', id: 'cart', content: '购物车' },
     { title: '我的', id: 'center', content: '我的' }
   ]
   static getDerivedStateFromProps(props, state) {
@@ -30,8 +30,8 @@ class Home extends React.PureComponent {
 
         <Switch>
           <Route path="/first" component={HomeFirst}></Route>
-          <Route path="/work" component={HomeWork}></Route>
-          <Route path="/active" component={HomeActive}></Route>
+          <Route path="/classify" component={HomeClassify}></Route>
+          <Route path="/cart" component={HomeCart}></Route>
           <Route path="/center" component={HomeCenter}></Route>
           <Redirect to="./first"></Redirect>
         </Switch>
