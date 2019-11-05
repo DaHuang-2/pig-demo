@@ -4,6 +4,7 @@ import "./global.less";
 import City from "./views/City";
 import Home from "./views/Home";
 import Login from "./views/Login";
+import Register from "./views/Register";
 
 const App = () => {
   return (
@@ -11,6 +12,7 @@ const App = () => {
       <Switch>
         <Route path="/city" component={City}></Route>
         <Route path="/login" component={Login}></Route>
+        <Route path="/register" component={Register}></Route>
         <Route path="/" component={Home}></Route>
       </Switch>
     </Router>
