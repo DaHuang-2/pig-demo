@@ -3,7 +3,7 @@ import "./HomeClassify.less"
 
 const HomeClassify = () => {
   return (
-    <div>
+    <div className='page-classify'>
       {/* <h1>分类页面</h1> */}
       <div className='big'>
         <div className='left'>

@@ -38,5 +38,6 @@
   },
   "devDependencies": {
     "babel-plugin-import": "^1.12.2"
-  }
+  },
+  "proxy": "https://m.hua.com"
 }
