@@ -4,24 +4,71 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import "./Register.less";
 
 class Register extends React.PureComponent {
-  constructor(props, context) {
-    super(props, context);
-    this.state = {
-      username: "", //账号
-      pwd: "" // 密码
-    };
-  }
+  RegisterClick = () => {
+    const username = this.users.value;
+    // console.log(username);
+    const password = this.password.value;
+    // console.log(password);
+    let users = localStorage.getItem("users");
+    if (users) {
+      users = JSON.parse(users);
+      if (users.username === username && users.password === password) {
+        alert("注册成功");
+        this.props.history.push("/login");
+      } else {
+        this.props.history.push("/register");
+        localStorage.setItem("users", JSON.stringify({ username, password }));
+      }
+    }
+  };
+  // RegisterClick = () => {
+    
+  //   let obj = [];
+  //   const username = this.users.value;
+  //   const password = this.password.value;
+  //   let ls_users = localStorage.getItem("users");
 
-  //去登录
-  handleGoLogin() {
-    this.props.history.push("/login");
-  }
-  //绑定表单值
-  handleChange(key, val) {
-    this.setState({
-      [key]: val
-    });
-  }
+  //   if (ls_users) {
+  //     //如果ls_users存在证明已有至少用户注册,
+  //     obj = JSON.parse(ls_users);
+  //     console.log(obj);
+
+  //     //对本地存储数据进行遍历和输入值对比 
+  //     let fg = obj.some(item => {
+  //       if (item.username === username) return true; //用户名已存在
+  //     });
+
+  //     if (fg) {
+  //       //fg为真找到用户名，接下里对密码判断
+  //       //对存储数据遍历，比对用户名名与密码
+  //       let f = false;
+  //       obj.map(item => {
+  //         if (item.username === username && item.password === password) {
+  //           f = true;
+  //           return f;
+  //         }
+  //       });
+  //       if (f) {
+  //         //查询正确可以正常登录
+  //         alert("登录成功");
+  //         this.props.history.push("/home");
+  //       } else {
+  //         alert("密码错误");
+  //       }
+  //     } else {
+  //       //没找到对将用户保存到本地，进行自动注册
+  //       obj.push({ username, password });
+  //       localStorage.setItem("users", JSON.stringify(obj));
+  //       this.props.history.push("/home");
+  //     }
+  //   } else {
+  //     //没有用户注册，直接保存到本地存储
+  //     obj.push({ username, password });
+  //     localStorage.setItem("users", JSON.stringify(obj));
+  //     this.props.history.push("/home");
+  //   }
+  // };
+
   render() {
     return (
       <div className="page-register">
@@ -35,14 +82,14 @@ class Register extends React.PureComponent {
         {/* 内容 */}
         <div className="container">
           <div className="hualogo">
-            <p>手机号注册</p>
+            <p>账号注册</p>
           </div>
           <div className="formgroup">
             <div className="formgroup-input">
               <input
                 type="text"
-                placeholder="请输入手机号"
-                onChange={value => this.handleChange("username", value)}
+                placeholder="请输入账号"
+                ref={el => (this.users = el)}
               />
             </div>
           </div>
@@ -57,12 +104,13 @@ class Register extends React.PureComponent {
               <input
                 type="password"
                 placeholder="请设置密码"
-                onChange={value => this.handleChange("pwd", value)}
+                ref={el => (this.password = el)}
               />
             </div>
           </div>
           <div className="form-btn">
             <Button
+              onClick={this.RegisterClick}
               type="warning"
               style={{
                 borderRadius: "50px",

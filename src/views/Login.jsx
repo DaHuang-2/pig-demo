@@ -4,6 +4,27 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import "./Login.less";
 
 class Login extends React.PureComponent {
+  LoginClick = () => {
+    const username = this.users.value;
+    // console.log(username);
+    const password = this.password.value;
+    // console.log(password);
+    let users = localStorage.getItem("users");
+    if (users) {
+      users = JSON.parse(users);
+      if (users.username === username && users.password === password) {
+        alert("登陆成功");
+        this.props.history.push("/center");
+      } else {
+        // alert("用户名或登录密码输入错误");
+        alert("您还没有注册，请注册吧~");
+
+        this.props.history.push("/register");
+        localStorage.setItem("users", JSON.stringify({ username, password }));
+      }
+    }
+  };
+
   render() {
     return (
       <div className="page-login">
@@ -15,35 +36,6 @@ class Login extends React.PureComponent {
         </div>
 
         {/* 内容 */}
-        <LoginRegister></LoginRegister>
-
-        {/* 其他登录方式 */}
-        <div className="other">
-          <div className="other-item inline">
-            <a href="https://m.hua.com/Passport/QQ/Login">
-              <i className="iconfont icon-QQ"></i>
-              <span>QQ</span>
-            </a>
-          </div>
-          <div className="other-item">
-            <span>|</span>
-          </div>
-          <div className="other-item">
-            <a href="https://m.hua.com/Passport/Alipay/Login">
-              <i className="iconfont icon-zhifubao"></i>
-              <span>支付宝</span>
-            </a>
-          </div>
-        </div>
-      </div>
-    );
-  }
-}
-
-class LoginRegister extends React.PureComponent {
-  render() {
-    return (
-      <div>
         <div className="container">
           <div className="hualogo">
             <img
@@ -53,16 +45,25 @@ class LoginRegister extends React.PureComponent {
           </div>
           <div className="formgroup">
             <div className="formgroup-input">
-              <input type="text" placeholder="请输入账号" />
+              <input
+                type="text"
+                placeholder="请输入账号"
+                ref={el => (this.users = el)}
+              />
             </div>
           </div>
           <div className="formgroup">
             <div className="formgroup-input">
-              <input type="password" placeholder="请输入密码" />
+              <input
+                type="password"
+                placeholder="请输入密码"
+                ref={el => (this.password = el)}
+              />
             </div>
           </div>
           <div className="form-btn">
             <Button
+              onClick={this.LoginClick}
               type="warning"
               style={{
                 borderRadius: "50px",
@@ -81,6 +82,25 @@ class LoginRegister extends React.PureComponent {
               <Link to="/register">没有账号，去注册</Link>
               <i className="iconfont icon-tiaozhuanqianwangyoujiantouxiangyouxiayibuxianxing"></i>
             </div>
+          </div>
+        </div>
+
+        {/* 其他登录方式 */}
+        <div className="other">
+          <div className="other-item inline">
+            <a href="https://m.hua.com/Passport/QQ/Login">
+              <i className="iconfont icon-QQ"></i>
+              <span>QQ</span>
+            </a>
+          </div>
+          <div className="other-item">
+            <span>|</span>
+          </div>
+          <div className="other-item">
+            <a href="https://m.hua.com/Passport/Alipay/Login">
+              <i className="iconfont icon-zhifubao"></i>
+              <span>支付宝</span>
+            </a>
           </div>
         </div>
       </div>

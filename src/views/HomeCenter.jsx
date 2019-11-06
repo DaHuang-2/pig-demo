@@ -43,19 +43,19 @@ const HomeCenter = () => {
           <div className="panel-top-body">
             <div className="order">
               <div className="order-item">
-                <a href="">
+                <a>
                   <i className="iconfont icon-daifukuan"></i>
                 </a>
                 <p>待付款</p>
               </div>
               <div className="order-item">
-                <a href="">
+                <a>
                   <i className="iconfont icon-truck"></i>
                 </a>
                 <p>今日配送</p>
               </div>
               <div className="order-item">
-                <a href="">
+                <a>
                   <i className="iconfont icon-daipingjia"></i>
                 </a>
                 <p>待评价</p>
@@ -66,25 +66,25 @@ const HomeCenter = () => {
         <div className="panel-center">
           <div className="linkbox">
             <div className="linkbox-item">
-              <a href="">
+              <a>
                 <i className="iconfont icon-youhuijuan"></i>
               </a>
               <p>优惠卷</p>
             </div>
             <div className="linkbox-item">
-              <a href="">
+              <a>
                 <i className="iconfont icon-quanyiqia"></i>
               </a>
               <p>权益卡</p>
             </div>
             <div className="linkbox-item">
-              <a href="">
+              <a>
                 <i className="iconfont icon-yue"></i>
               </a>
               <p>余额</p>
             </div>
             <div className="linkbox-item">
-              <a href="">
+              <a>
                 <i className="iconfont icon-uEA-ste-service-"></i>
               </a>
               <p>会员积分</p>
@@ -92,25 +92,25 @@ const HomeCenter = () => {
           </div>
           <div className="linkbox">
             <div className="linkbox-item">
-              <a href="">
+              <a>
                 <i className="iconfont icon-dizhi"></i>
               </a>
               <p>收货地址</p>
             </div>
             <div className="linkbox-item">
-              <a href="">
+              <a>
                 <i className="iconfont icon-naozhong"></i>
               </a>
               <p>生日提醒</p>
             </div>
             <div className="linkbox-item">
-              <a href="">
+              <a>
                 <i className="iconfont icon-wuxiaoxing-kong"></i>
               </a>
               <p>我的收藏</p>
             </div>
             <div className="linkbox-item">
-              <a href="">
+              <a>
                 <i className="iconfont icon-liulanjilu"></i>
               </a>
               <p>浏览记录</p>
@@ -120,25 +120,25 @@ const HomeCenter = () => {
         <div className="panel-bottom">
           <div className="linkbox-bottom">
             <div className="linkbox-bottom-item">
-              <a href="">
+              <a>
                 <i className="iconfont icon-kefu"></i>
               </a>
               <p>联系客服</p>
             </div>
             <div className="linkbox-bottom-item">
-              <a href="">
+              <a>
                 <i className="iconfont icon-bangzhuzhongxin"></i>
               </a>
               <p>帮助中心</p>
             </div>
             <div className="linkbox-bottom-item">
-              <a href="">
+              <a>
                 <i className="iconfont icon-guanyu"></i>
               </a>
               <p>关于花礼</p>
             </div>
             <div className="linkbox-bottom-item">
-              <a href="">
+              <a>
                 <i className="iconfont icon-shezhi"></i>
               </a>
               <p>设置</p>
