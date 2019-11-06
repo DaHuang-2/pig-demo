@@ -1,22 +1,22 @@
-import React from 'react'
-import { TabBar } from 'antd-mobile'
-import { Switch, Route, Redirect } from 'react-router-dom'
-import './Home.less'
+import React from "react"
+import { TabBar } from "antd-mobile"
+import { Switch, Route, Redirect } from "react-router-dom"
+import "./Home.less"
 // 引入各模块组件
-import HomeFirst from './HomeFirst'
-import HomeClassify from './HomeClassify'
-import HomeCart from './HomeCart'
-import HomeCenter from './HomeCenter'
+import HomeFirst from "./HomeFirst"
+import HomeClassify from "./HomeClassify"
+import HomeCart from "./HomeCart"
+import HomeCenter from "./HomeCenter"
 
 class Home extends React.PureComponent {
   state = {
     curItem: this.props.location.pathname.substr(1)
   }
   TableItems = [
-    { title: '首页', id: 'first', content: '首页' },
-    { title: '分类', id: 'classify', content: '分类' },
-    { title: '购物车', id: 'cart', content: '购物车' },
-    { title: '我的', id: 'center', content: '我的' }
+    { title: "首页", id: "first", content: "首页" },
+    { title: "分类", id: "classify", content: "分类" },
+    { title: "购物车", id: "cart", content: "购物车" },
+    { title: "我的", id: "center", content: "我的" }
   ]
   static getDerivedStateFromProps(props, state) {
     return {
@@ -25,20 +25,20 @@ class Home extends React.PureComponent {
   }
   render() {
     return (
-      <div className="page-home">
+      <div className='page-home'>
         {/* <h1>首页</h1> */}
 
         <Switch>
-          <Route path="/first" component={HomeFirst}></Route>
-          <Route path="/classify" component={HomeClassify}></Route>
-          <Route path="/cart" component={HomeCart}></Route>
-          <Route path="/center" component={HomeCenter}></Route>
-          <Redirect to="./first"></Redirect>
+          <Route path='/first' component={HomeFirst}></Route>
+          <Route path='/classify' component={HomeClassify}></Route>
+          <Route path='/cart' component={HomeCart}></Route>
+          <Route path='/center' component={HomeCenter}></Route>
+          <Redirect to='./first'></Redirect>
         </Switch>
         <TabBar
-          unselectedTintColor="#949494"
-          tintColor="#33A3F4"
-          barTintColor="white"
+          unselectedTintColor='#949494'
+          tintColor='coral'
+          barTintColor='white'
         >
           {this.TableItems.map(item => {
             return (
