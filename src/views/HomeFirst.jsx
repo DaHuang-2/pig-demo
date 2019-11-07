@@ -158,9 +158,9 @@ class HomeFirst extends React.PureComponent {
 
         {/* 我是从 一秒选花 开始到 新品来袭 的 父元素 */}
         <div className='all'>
-          {/* 一秒选花 */}
+          {/* 一秒选花 */}~
           <div className='title'>
-            <i></i>一秒选花
+            <i></i>一秒选花~
           </div>
 
           {/* 送花给亲朋好友 */}
