@@ -10,8 +10,10 @@ class Login extends React.PureComponent {
     const password = this.password.value;
     // console.log(password);
     let users = localStorage.getItem("users");
+    console.log(users);
     if (users) {
       users = JSON.parse(users);
+      console.log(users);
       if (users.username === username && users.password === password) {
         alert("登陆成功");
         this.props.history.push("/center");
@@ -22,6 +24,9 @@ class Login extends React.PureComponent {
         this.props.history.push("/register");
         localStorage.setItem("users", JSON.stringify({ username, password }));
       }
+    } else {
+      localStorage.setItem("users", JSON.stringify({ username, password }));
+      this.props.history.push("/register");
     }
   };
 

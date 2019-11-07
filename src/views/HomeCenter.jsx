@@ -34,10 +34,10 @@ const HomeCenter = () => {
           <div className="panel-top-header">
             <div className="panel-top-title">我的订单</div>
             <div className="panel-top-right">
-              <a>
+              <Link to="/order">
                 全部订单
                 <i className="iconfont icon-tiaozhuanqianwangyoujiantouxiangyouxiayibuxianxing"></i>
-              </a>
+              </Link>
             </div>
           </div>
           <div className="panel-top-body">
@@ -46,19 +46,25 @@ const HomeCenter = () => {
                 <a>
                   <i className="iconfont icon-daifukuan"></i>
                 </a>
+                <Link to='/order'>
                 <p>待付款</p>
+                </Link>
               </div>
               <div className="order-item">
                 <a>
                   <i className="iconfont icon-truck"></i>
                 </a>
+                <Link to='/order'>
                 <p>今日配送</p>
+                </Link>
               </div>
               <div className="order-item">
                 <a>
                   <i className="iconfont icon-daipingjia"></i>
                 </a>
+                <Link to='/order'>
                 <p>待评价</p>
+                </Link>
               </div>
             </div>
           </div>
@@ -107,6 +113,7 @@ const HomeCenter = () => {
               <a>
                 <i className="iconfont icon-wuxiaoxing-kong"></i>
               </a>
+
               <p>我的收藏</p>
             </div>
             <div className="linkbox-item">
