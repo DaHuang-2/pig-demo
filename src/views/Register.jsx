@@ -20,9 +20,13 @@ class Register extends React.PureComponent {
         localStorage.setItem("users", JSON.stringify({ username, password }));
       }
     }
+    else{
+      localStorage.setItem("users", JSON.stringify({ username, password }));
+      this.props.history.push("/register");
+    }
   };
   // RegisterClick = () => {
-    
+
   //   let obj = [];
   //   const username = this.users.value;
   //   const password = this.password.value;
@@ -33,7 +37,7 @@ class Register extends React.PureComponent {
   //     obj = JSON.parse(ls_users);
   //     console.log(obj);
 
-  //     //对本地存储数据进行遍历和输入值对比 
+  //     //对本地存储数据进行遍历和输入值对比
   //     let fg = obj.some(item => {
   //       if (item.username === username) return true; //用户名已存在
   //     });
@@ -131,7 +135,6 @@ class Register extends React.PureComponent {
             </div>
           </div>
         </div>
-
         {/* 其他登录方式 */}
         <div className="other">
           <div className="other-item inline">

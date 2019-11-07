@@ -11,23 +11,38 @@ class Product extends React.PureComponent {
 
   getFlowerList() {
     axios
-      .post(" /home/GetProductListPrice", {
-        // headers: {
-        //   "Content-Type": " application/x-www-form-urlencoded; charset=UTF-8"
-        // }
-      })
-      .then(response => {
-        let result = response.data
-        console.log(result)
-        let getFlowers = []
-        if (result.Status === 0) {
-          this.setState({
-            getFlowers: result.Datas
-          })
-        }
+      .post('https://m.hua.com/home/GetProductListPrice', {
 
-        console.log(getFlowers)
-      })
+          itemcodes: [9010966,9012177,9010011,9012437,9012154,9012009,9010855,9012089,9012201,
+            9012440,9012332,9012092,9012441,9012201,1073264,1073185,1073033,1073263,
+            5602016,9092114,5010023,5602045,1060038,1073247,1077029,1076062,3010004,
+            1207010,1204042,1201003]
+      }
+      ,
+      {
+        transformRequest(data){
+         console.log(data)
+         let arr = []
+         for(let key in data){
+           arr.push(`${key}=${data[key]}`)
+         }
+         return arr.join('&')
+        }
+       }
+      )
+      .then(response => {
+        // let result = response.data
+        // console.log(result)
+        // let getFlowers = []
+        // if (result.Status === 0) {
+        //   this.setState({
+        //     getFlowers: result.Datas
+        //   })
+        // }
+        // console.log(getFlowers)
+        console.log(response.data.Datas)
+       }
+      )
   }
   render() {
     return (
