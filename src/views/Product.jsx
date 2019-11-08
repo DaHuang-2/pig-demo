@@ -108,7 +108,21 @@ class Product extends React.PureComponent {
 
                     {/* 购物车图标 */}
                     <div className='east'>
-                      <i className='iconfont icon-gouwuche'></i>
+                      <i
+                        className='iconfont icon-gouwuche'
+                        onClick={() => {
+                          let ItemCode = item.ItemCode
+                          let Cpmc = item.Cpmc
+                          let cart = window.localStorage.setItem("getFlowers", {
+                            ItemCode,
+                            Cpmc
+                            // Instro,
+                            // Price,
+                            // LinePrice
+                          })
+                          return cart
+                        }}
+                      ></i>
                     </div>
                   </div>
                 </a>
