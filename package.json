@@ -45,15 +45,8 @@
     ]
   },
   "devDependencies": {
-<<<<<<< HEAD
     "babel-plugin-import": "^1.12.2"
   },
   "proxy": "http://localhost:3000"
    
-=======
-    "babel-plugin-import": "^1.12.2",
-    "json-server": "^0.15.1"
-  },
-  "proxy": "https://m.hua.com"
->>>>>>> d91ad67a7e3f6024c2dfbbd94e92528834ac0c56
 }
