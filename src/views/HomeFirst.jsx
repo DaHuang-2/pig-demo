@@ -57,13 +57,6 @@ class HomeFirst extends React.PureComponent {
   // }
   // ============================================================================================
 
-<<<<<<< HEAD
-  handlelink = e => {
-    let value = e.target.value
-    console.log(value)
-    e.preventDefault()
-  }
-=======
   // handlelink = ev => {
   //   // let value = e.target.value
   //   // console.log(value)
@@ -76,7 +69,6 @@ class HomeFirst extends React.PureComponent {
 
   // ===============================================================================================
 
->>>>>>> d9d17cc86f89f5b4c9ffed56b479188991475800
   render() {
     const { data, flows, loves, friends, picts, isShow } = this.state
     return (
@@ -106,9 +98,9 @@ class HomeFirst extends React.PureComponent {
         <NavBar
           className='ww-nav'
           mode='light'
-          icon={<i key="ileft" className='iconfont icon-009'></i>}
+          icon={<i key='ileft' className='iconfont icon-009'></i>}
           onLeftClick={() => console.log("onLeftClick")}
-          rightContent={[<i key="iright" className='iconfont icon-kefu'></i>]}
+          rightContent={[<i key='iright' className='iconfont icon-kefu'></i>]}
         >
           <div className='picture'>
             <img
@@ -121,11 +113,7 @@ class HomeFirst extends React.PureComponent {
         {/* 轮播图 */}
         <Carousel className='banner' autoplay infinite>
           {data.map((item, index) => (
-<<<<<<< HEAD
-            <a href='' key={index} onClick={this.handlelink}>
-=======
             <a href='' key={index} onMouseMove={this.handlelink}>
->>>>>>> d9d17cc86f89f5b4c9ffed56b479188991475800
               <img
                 src={`https://img02.hua.com/slider/${item}`}
                 alt='设计师鲜花'
@@ -174,7 +162,6 @@ class HomeFirst extends React.PureComponent {
           <div className='title'>
             <i></i>一秒选花~
           </div>
-
           {/* 送花给亲朋好友 */}
           <div className='friends'>
             {friends.map((pop, index) => (
@@ -186,7 +173,6 @@ class HomeFirst extends React.PureComponent {
               </a>
             ))}
           </div>
-
           {/* 节日送花 */}
           <div className='active'>
             {loves.map((pop, index) => (
@@ -198,9 +184,8 @@ class HomeFirst extends React.PureComponent {
               </a>
             ))}
           </div>
-
           {/* hot 热销 */}
-          <div className='ww-hot'> 
+          <div className='ww-hot'>
             <a href=''>
               <p>热销榜</p>
               <p className='little'>集万千宠爱</p>
@@ -221,7 +206,6 @@ class HomeFirst extends React.PureComponent {
               </div>
             </a>
           </div>
-
           {/* 新品来袭 */}
           <div className='news'>
             {flows.map((pop, index) => (
