@@ -248,7 +248,7 @@ class HomeCart extends React.Component {
                    return (<div className = 'guss-item' key={index}>
                    <a href = 'http://baidu.com'>
                      <div className = 'guss-item-img'>
-                       <img className='img' src = {item.src} alt = ''/>
+                       <img className='img' src = {`https://img01.hua.com/uploadpic/newpic/${item.src}`} alt = ''/>
                      </div>
                      <div className = 'guss-item-detail'>
                        <div className = 'guss-item-info'>
@@ -270,5 +270,4 @@ class HomeCart extends React.Component {
     )
   }
 }
-
 export default HomeCart

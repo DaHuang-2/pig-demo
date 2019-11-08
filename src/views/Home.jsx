@@ -7,6 +7,7 @@ import HomeFirst from "./HomeFirst"
 import HomeClassify from "./HomeClassify"
 import HomeCart from "./HomeCart"
 import HomeCenter from "./HomeCenter"
+import CartDetail from "./CartDetail"
 
 class Home extends React.PureComponent {
   state = {
@@ -33,6 +34,7 @@ class Home extends React.PureComponent {
           <Route path='/classify' component={HomeClassify}></Route>
           <Route path='/cart' component={HomeCart}></Route>
           <Route path='/center' component={HomeCenter}></Route>
+          <Route path='/cartdetail' component={CartDetail}></Route>
           <Redirect to='./first'></Redirect>
         </Switch>
         <TabBar

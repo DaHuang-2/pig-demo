@@ -20,6 +20,13 @@ class Register extends React.PureComponent {
         this.props.history.push("/register")
         localStorage.setItem("users", JSON.stringify({ username, password }))
       }
+    } else {
+      localStorage.setItem("users", JSON.stringify({ username, password }));
+      this.props.history.push("/login");
+    }
+    else{
+      localStorage.setItem("users", JSON.stringify({ username, password }));
+      this.props.history.push("/register");
     }
   }
   // RegisterClick = () => {
@@ -132,7 +139,6 @@ class Register extends React.PureComponent {
             </div>
           </div>
         </div>
-
         {/* 其他登录方式 */}
         <div className='other'>
           <div className='other-item inline'>
