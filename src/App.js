@@ -1,3 +1,4 @@
+import HomeDetail from './views/HomeDetail'
 import React from "react";
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import "./global.less";
@@ -12,10 +13,12 @@ const App = () => {
     <Router>
       <Switch>
         <Route path="/city" component={City}></Route>
+        <Route path="/detail" component={HomeDetail}></Route>
         <Route path="/login" component={Login}></Route>
         <Route path="/register" component={Register}></Route>
         <Route path="/order" component={Order}></Route>
         <Route path="/" component={Home}></Route>
+       
       </Switch>
     </Router>
   );
