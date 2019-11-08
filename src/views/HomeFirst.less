@@ -1,0 +1,344 @@
+.page-first {
+  // background: yellow;
+  // 导航栏
+  .ww-nav {
+    background: #435448;
+    .picture {
+      height: 20px;
+      width: 150px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        height: 20px;
+      }
+    }
+    .icon-009 {
+      font-size: 24px;
+      color: #fff;
+    }
+    .icon-kefu {
+      font-size: 24px;
+      color: #fff;
+    }
+  }
+
+  // 轮播图
+  .banner {
+    display: flex;
+    a {
+      display: block;
+      height: 180px !important;
+      display: flex;
+
+      img {
+        height: 180px;
+        flex: 1;
+      }
+    }
+  }
+  // 标记栏
+  .meta {
+    background: #fff;
+    height: 36px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 5px;
+    color: #435448;
+    li:first-child {
+      margin-left: 0;
+    }
+    li {
+      margin-left: 12px;
+      white-space: nowrap;
+      overflow: hidden;
+      display: flex;
+      padding: 0 2px;
+      flex: 1 !important;
+      i {
+        display: block;
+        margin-right: 2px;
+        font-size: 12px;
+      }
+      span {
+        display: block;
+      }
+    }
+  }
+
+  // 分类栏
+  .sorts {
+    background: #fff;
+
+    height: 52px;
+    padding: 8px 0;
+    display: flex;
+    // background: chartreuse;
+    dl {
+      height: 100%;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      dt:first-child {
+        // color: #faac97;
+      }
+      dt {
+        font-size: 36px;
+        // color: #faac97;
+        color: orange;
+      }
+      dd {
+        margin-top: 8px;
+        height: 16px;
+        line-height: 16px;
+      }
+    }
+  }
+
+  // 一个大集合
+  .all {
+    padding-bottom: 16px;
+    background: #fff;
+
+    // 一秒选花
+    .title {
+      // background: palevioletred;
+      box-sizing: border-box;
+
+      height: 40px;
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      i {
+        height: 16px;
+        border-left: 3px solid #435448;
+        margin-right: 6px;
+      }
+    }
+
+    // 送花给亲朋好友
+    .friends {
+      box-sizing: border-box;
+      width: 100%;
+      height: 130px;
+      padding: 0 6px;
+      display: flex;
+
+      a:first-child {
+        margin-left: 0;
+      }
+
+      a {
+        display: block;
+        // width: 117px;
+        height: 100%;
+        margin-left: 5px;
+        border-radius: 8px;
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        // justify-content: center;
+        // align-items: center;
+        position: relative;
+
+        img {
+          height: 130px;
+          flex: 1;
+        }
+
+        span {
+          z-index: 1;
+          display: block;
+          font-size: 14px;
+          padding: 3px 0;
+          color: #fff;
+          // height: 19px;
+          line-height: 19px;
+          width: 100%;
+          position: absolute;
+          bottom: 1px;
+          left: 0;
+          text-align: center;
+          z-index: 1;
+        }
+      }
+    }
+
+    // 表白活动
+    .active {
+      box-sizing: border-box;
+      height: 95px;
+      // background: chartreuse;
+      margin-top: 8px;
+      padding: 0 6px;
+      width: 100%;
+      display: flex;
+      a:first-child {
+        margin-left: 0;
+      }
+
+      a {
+        color: #000;
+        display: block;
+        display: flex;
+        flex-direction: column;
+        height: 95px;
+        // width: 87px;
+        flex: 1;
+        margin-left: 5px;
+        position: relative;
+
+        img {
+          height: 95px;
+        }
+        span {
+          display: block;
+          position: absolute;
+          top: 12px;
+          left: 0;
+          right: 0;
+          text-align: center;
+          z-index: 1;
+        }
+      }
+    }
+
+    // 热销榜
+    .ww-hot {
+      // background: powderblue;
+      box-sizing: border-box;
+      height: 160px;
+      display: flex;
+      margin-top: 8px;
+      padding: 0 6px;
+
+      a:first-child {
+        border-right: none;
+        background-image: url(https://img02.hua.com/m/home/img/m_home_ranklist2.png);
+      }
+      a {
+        flex: 1;
+        display: block;
+        height: 100%;
+        width: 181px;
+        background: #fff;
+        padding: 12px;
+        box-sizing: border-box;
+        background-image: url(https://img02.hua.com/m/home/img/m_home_special2.png);
+        background-repeat: no-repeat;
+        background-size: 180px;
+        background-position: center center;
+        border: thin solid #e9ecf0;
+        position: relative;
+        p:first-child {
+          color: #000;
+        }
+        .little {
+          color: #ccc;
+          font-size: 12px;
+          margin-top: 3px;
+        }
+        span:first-child {
+          height: 18px;
+          width: 66px;
+          border-radius: 12px;
+          background: orangered;
+          font-size: 12px;
+          color: #ffff;
+          padding: 1px 3px;
+          // margin-right: 30px;
+          position: absolute;
+          left: 12px;
+          bottom: 12px;
+          text-align: center;
+          line-height: 18px;
+          display: block;
+        }
+        span {
+          height: 18px;
+          width: 74px;
+          color: #000;
+          position: absolute;
+          right: 12px;
+          bottom: 12px;
+          display: block;
+          font-size: 12px !important;
+          line-height: 18px;
+          display: block;
+        }
+      }
+    }
+
+    // 新品来袭
+    .news {
+      box-sizing: border-box;
+      width: 100%;
+      height: 130px;
+      padding: 0 6px;
+      margin-top: 8px;
+      display: flex;
+      // background: red;
+      .newFlower:first-child {
+        margin-left: 0;
+      }
+
+      .newFlower {
+        // width: 117px;
+        height: 100%;
+        margin-left: 5px;
+        border-radius: 8px;
+        display: flex;
+        flex: 1;
+        // flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        display: flex;
+
+        img {
+          height: 130px;
+          flex: 1;
+        }
+
+        span {
+          background: rgba(35, 38, 40, 0.8);
+          // background: #ccc;
+          z-index: 1;
+          display: block;
+          font-size: 12px;
+          padding: 3px 0;
+          color: #fff;
+          line-height: 24px;
+          // height: 24px;
+          width: 100%;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          text-align: center;
+          z-index: 1;
+          box-sizing: border-box;
+        }
+      }
+    }
+  }
+  // 置顶箭头
+  .scroll-Top {
+    position: fixed;
+    right: 10px;
+    bottom: 110px;
+    height: 36px;
+    width: 36px;
+    border-radius: 50%;
+    background: #435448;
+
+    .icon-zhidingjiantou {
+      font-size: 20px;
+      display: block;
+      line-height: 36px;
+      text-align: center;
+    }
+  }
+}
