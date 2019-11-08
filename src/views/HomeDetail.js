@@ -14,12 +14,12 @@ class Detail extends React.Component{
           };
     }
     onSelect = (opt) => {
-        // console.log(opt.props.value);
-        this.setState({
-          visible: true,
-          selected: opt.props.value,
-        });
-      };
+      // console.log(opt.props.value);
+      this.setState({
+        visible: false,
+        selected: opt.props.value,
+      });
+    };
       handleVisibleChange = (visible) => {
         this.setState({
           visible,
@@ -27,13 +27,8 @@ class Detail extends React.Component{
       };
 
 render(){
-   
-
-   
     return(
-
         <div>
-    
   {/* filter */}
   <NavBar
         mode="light"
