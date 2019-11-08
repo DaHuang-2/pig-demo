@@ -11,6 +11,7 @@ class Detail extends React.Component{
         this.state = {
             visible: false,
             selected: '',
+            flowersbrr:[],
           };
     }
     onSelect = (opt) => {
@@ -27,9 +28,12 @@ class Detail extends React.Component{
       };
 
 render(){
+  const {flowersbrr}= this.state;  
+ 
     return(
+
         <div>
-  {/* filter */}
+
   <NavBar
         mode="light"
         rightContent={
@@ -114,9 +118,67 @@ render(){
     </div>
 
     </nav>
+    <div style={{display:"flex"}}>
+    <artice>
+    <div className="flowers-A">
+
+    { 
+      flowersbrr.map (item=> {
+      return(
+    
+        <img src={`https://img01.hua.com/uploadpic/newpic/${flowersbrr.item}.jpg_220x240.jpg`} alt=""/>
+       
+      )
+    
+ })
+}
+       </div>
+       <div  className="flowers-word">
+       <p className="flowers-word-info">甜美公主·白玫瑰22枝，粉佳人
+         <br/>
+         粉玫瑰14枝，粉色桔梗5枝</p>
+         <div className="flowers-word-info-price">
+           <p className="flowers-word-info-priceinfo">
+          <strong style={{ color:"#FF734C",paddingLeft:"5px"}}> ￥358</strong>
+           </p>
+          
+         </div>
+    </div>
+
+    </artice>
+    </div>
     
     </div>
     )
+}
+componentDidMount(){
+  axios.post("https://m.hua.com/home/GetProductListPrice",{
+    itemcodes: [9012154,9012177,9012009,9010966,9012243,9010011,9012089,9012011,9010731,9012175,9012125,9012060],
+  },
+  {
+    transformRequest(data) {
+      console.log(data)
+       //这里是输出formdata中的数据转换为json格式的数据
+      let arr = []
+      for (let key in data) {
+        arr.push(`${key}=${data[key]}`)
+      }
+      return arr.join("&")
+    }
+
+  }
+  
+  
+  ).then(response=>{
+   let result=response.data;
+  this.setState({
+    flowersbrr:result.Datas.ProductPrices
+  })
+ 
+
+  }
+   )
+
 }
 }
 
