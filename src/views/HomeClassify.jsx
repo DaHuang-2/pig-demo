@@ -72,7 +72,7 @@ const TabExample = props => {
           console.log("onTabClick", index, tab)
         }}
       >
-      
+
         {props.bar.map(item => {
           return (
             <div
@@ -83,7 +83,7 @@ const TabExample = props => {
                 backgroundColor: "#fff"
               }}
             >
-               <div className="zp-all"> 
+               <div className="zp-all">
                 <img src={item.url} alt=""/>
                 </div>
                <div className="zp-pic">
@@ -101,20 +101,20 @@ const TabExample = props => {
                   <div className="zp-pic-i" style={{textAlign:"center",width:"33.3%",height:"80px",marginTop:"10px"}}>
                   <img src={item.pic02} alt="" style={{width:"56px",height:"56px",marginBottom:"10px"}}/>
                   <p style={{fontSize: "16px",fontWeight:"300",}}>{item.title}</p>
-                  </div> 
+                  </div>
                   {/* <img src={item.pic} alt=""  style={{width:"56px",height:"56px",marginTop: "5px",
    marginLeft:"15px"}}/>
                   <p style={{fontSize: "16px",fontWeight:"300",}}>{item.title}</p> */}
-                 
+
                   </div>
-            
-             
+
+
             </div>
           )
-         
-        
+
+
         })}
-      
+
 
       </Tabs>
     </div>
@@ -142,7 +142,7 @@ export default HomeClassify
         <img class="catebox-details-item-pic" src="https://img02.hua.com/m/category/Classification/m_category_hot_Birthday.png" alt="生日鲜花"/>
         <p className="catebox-word">生日鲜花</p>
         </div>
-  
+
     </nav>
    <section>
         <div className="catebox-details-item">
@@ -254,6 +254,6 @@ export default HomeClassify
 </div>
 
    </aside>
-   
+
    </div>  */
 // }
