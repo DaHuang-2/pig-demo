@@ -45,7 +45,7 @@ class HomeCart extends React.Component {
   commendlist1 = [
     {
       src: "https://img01.hua.com/uploadpic/newpic/9010949.jpg_80x87.jpg",
-      name: "天使之               恋",
+      name: "天使之恋",
       price: 119
     },
     {
@@ -68,7 +68,7 @@ class HomeCart extends React.Component {
   commendlist2 = [
     {
       src: "https://img01.hua.com/uploadpic/newpic/3010005.jpg_80x87.jpg",
-      name: "费列                 罗榛果威化糖果巧克力礼盒8粒心形装",
+      name: "费列罗榛果威化糖果巧克力礼盒8粒心形装",
       price: 68
     },
     {
@@ -119,7 +119,7 @@ class HomeCart extends React.Component {
                 <div className='item-img'>
                   <img
                     className='img'
-                    src='https://img01.hua.com/uploadpic/newpic/9010011.jpg_220x240.jpg'
+                    src='https:/img01.hua.com/uploadpic/newpic/9010011.jpg_220x240.jpg'
                     alt='一心一意'
                   />
                 </div>
@@ -159,7 +159,7 @@ class HomeCart extends React.Component {
                 <div className='item-img'>
                   <img
                     className='img'
-                    src='https://img01.hua.com/uploadpic/newpic/9010011.jpg_220x240.jpg'
+                    src='https:/img01.hua.com/uploadpic/newpic/9010011.jpg_220x240.jpg'
                     alt='一心一意'
                   />
                 </div>
@@ -237,7 +237,7 @@ class HomeCart extends React.Component {
           </div>
           {/* 当购物车为空时 */}
           {/* <div className = 'emptyCart'>
-          <img className = 'img' src = 'https://img02.hua.com/m/images/m_emptycart.png' alt = ''/>
+          <img className = 'img' src = https:'//img02.hua.com/m/images/m_emptycart.png' alt = ''/>
           <p className = 'text'>这里什么都没有呀...</p>
         </div>
         <div className = 'guss'>
@@ -251,7 +251,7 @@ class HomeCart extends React.Component {
                    return (<div className = 'guss-item' key={index}>
                    <a href = 'http:https://baidu.com'>
                      <div className = 'guss-item-img'>
-                       <img className='img' src = {`https:https://img01.hua.com/uploadpic/newpic/${item.src}`} alt = ''/>
+                       <img className='img' src = https:{`https://img01.hua.com/uploadpic/newpic/${item.src}`}https: alt = ''/>
                      </div>
                      <div className = 'guss-item-detail'>
                        <div className = 'guss-item-info'>
