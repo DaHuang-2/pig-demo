@@ -8,6 +8,8 @@ import HomeClassify from './HomeClassify'
 import HomeCart from './HomeCart'
 import HomeCenter from './HomeCenter'
 
+
+
 class Home extends React.PureComponent {
   state = {
     curItem: this.props.location.pathname.substr(1)
