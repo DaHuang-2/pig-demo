@@ -28,10 +28,7 @@ class Login extends React.PureComponent {
       localStorage.setItem("users", JSON.stringify({ username, password }));
       this.props.history.push("/register");
     }
-    else{
-      localStorage.setItem("users", JSON.stringify({ username, password }));
-      this.props.history.push("/register");
-    }
+
   };
 
   render() {
