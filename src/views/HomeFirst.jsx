@@ -98,9 +98,9 @@ class HomeFirst extends React.PureComponent {
         <NavBar
           className='ww-nav'
           mode='light'
-          icon={<i key="ileft" className='iconfont icon-009'></i>}
+          icon={<i key='ileft' className='iconfont icon-009'></i>}
           onLeftClick={() => console.log("onLeftClick")}
-          rightContent={[<i key="iright" className='iconfont icon-kefu'></i>]}
+          rightContent={[<i key='iright' className='iconfont icon-kefu'></i>]}
         >
           <div className='picture'>
             <img
@@ -162,7 +162,6 @@ class HomeFirst extends React.PureComponent {
           <div className='title'>
             <i></i>一秒选花~
           </div>
-
           {/* 送花给亲朋好友 */}
           <div className='friends'>
             {friends.map((pop, index) => (
@@ -174,7 +173,6 @@ class HomeFirst extends React.PureComponent {
               </a>
             ))}
           </div>
-
           {/* 节日送花 */}
           <div className='active'>
             {loves.map((pop, index) => (
@@ -186,7 +184,6 @@ class HomeFirst extends React.PureComponent {
               </a>
             ))}
           </div>
-
           {/* hot 热销 */}
           <div className='ww-hot'>
             <a href=''>
@@ -209,7 +206,6 @@ class HomeFirst extends React.PureComponent {
               </div>
             </a>
           </div>
-
           {/* 新品来袭 */}
           <div className='news'>
             {flows.map((pop, index) => (

@@ -21,11 +21,11 @@ class Register extends React.PureComponent {
         localStorage.setItem("users", JSON.stringify({ username, password }))
       }
     } else {
-      localStorage.setItem("users", JSON.stringify({ username, password }));
-      this.props.history.push("/login");
+      localStorage.setItem("users", JSON.stringify({ username, password }))
+      this.props.history.push("/login")
     }
-    
-  }
+
+  };
   // RegisterClick = () => {
 
   //   let obj = [];
