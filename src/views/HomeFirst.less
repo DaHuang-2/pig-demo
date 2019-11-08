@@ -25,7 +25,17 @@
 
   // 轮播图
   .banner {
-    height: 180px !important;
+    display: flex;
+    a {
+      display: block;
+      height: 180px !important;
+      display: flex;
+
+      img {
+        height: 180px;
+        flex: 1;
+      }
+    }
   }
   // 标记栏
   .meta {
@@ -123,19 +133,20 @@
 
       a {
         display: block;
-        width: 117px;
+        // width: 117px;
         height: 100%;
         margin-left: 5px;
         border-radius: 8px;
         display: flex;
         flex: 1;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        // justify-content: center;
+        // align-items: center;
         position: relative;
 
         img {
           height: 130px;
+          flex: 1;
         }
 
         span {
@@ -144,6 +155,7 @@
           font-size: 14px;
           padding: 3px 0;
           color: #fff;
+          // height: 19px;
           line-height: 19px;
           width: 100%;
           position: absolute;
@@ -158,7 +170,6 @@
     // 表白活动
     .active {
       box-sizing: border-box;
-
       height: 95px;
       // background: chartreuse;
       margin-top: 8px;
@@ -170,14 +181,16 @@
       }
 
       a {
+        color: #000;
         display: block;
         display: flex;
         flex-direction: column;
         height: 95px;
-        width: 87px;
+        // width: 87px;
+        flex: 1;
         margin-left: 5px;
         position: relative;
-        flex: 1;
+
         img {
           height: 95px;
         }
@@ -220,6 +233,14 @@
         background-position: center center;
         border: thin solid #e9ecf0;
         position: relative;
+        p:first-child {
+          color: #000;
+        }
+        .little {
+          color: #ccc;
+          font-size: 12px;
+          margin-top: 3px;
+        }
         span:first-child {
           height: 18px;
           width: 66px;
@@ -265,7 +286,7 @@
       }
 
       .newFlower {
-        width: 117px;
+        // width: 117px;
         height: 100%;
         margin-left: 5px;
         border-radius: 8px;
@@ -279,6 +300,7 @@
 
         img {
           height: 130px;
+          flex: 1;
         }
 
         span {
@@ -300,6 +322,23 @@
           box-sizing: border-box;
         }
       }
+    }
+  }
+  // 置顶箭头
+  .scroll-Top {
+    position: fixed;
+    right: 10px;
+    bottom: 110px;
+    height: 36px;
+    width: 36px;
+    border-radius: 50%;
+    background: #435448;
+
+    .icon-zhidingjiantou {
+      font-size: 20px;
+      display: block;
+      line-height: 36px;
+      text-align: center;
     }
   }
 }

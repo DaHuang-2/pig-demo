@@ -1,27 +1,28 @@
-import React from "react";
-import { Button } from "antd-mobile";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import "./Register.less";
+import React from "react"
+import { Button } from "antd-mobile"
+import { BrowserRouter as Router, Route, Link } from "react-router-dom"
+import "./Register.less"
 
 class Register extends React.PureComponent {
   RegisterClick = () => {
-    const username = this.users.value;
-    // console.log(username);
-    const password = this.password.value;
-    // console.log(password);
-    let users = localStorage.getItem("users");
+    console.log(123)
+    const username = this.users.value
+    console.log(username)
+    const password = this.password.value
+    console.log(password)
+    let users = localStorage.getItem("users")
     if (users) {
-      users = JSON.parse(users);
+      users = JSON.parse(users)
       if (users.username === username && users.password === password) {
-        alert("注册成功");
-        this.props.history.push("/login");
+        alert("注册成功")
+        this.props.history.push("/login")
       } else {
-        this.props.history.push("/register");
-        localStorage.setItem("users", JSON.stringify({ username, password }));
+        this.props.history.push("/register")
+        localStorage.setItem("users", JSON.stringify({ username, password }))
       }
     } else {
-      localStorage.setItem("users", JSON.stringify({ username, password }));
-      this.props.history.push("/login");
+      localStorage.setItem("users", JSON.stringify({ username, password }))
+      this.props.history.push("/login")
     }
 
   };
@@ -75,24 +76,24 @@ class Register extends React.PureComponent {
 
   render() {
     return (
-      <div className="page-register">
+      <div className='page-register'>
         {/* 头部 */}
-        <div className="headerbar">
-          <Link to="/center">
-            <i className="iconfont icon-cha"></i>
+        <div className='headerbar'>
+          <Link to='/center'>
+            <i className='iconfont icon-cha'></i>
           </Link>
         </div>
 
         {/* 内容 */}
-        <div className="container">
-          <div className="hualogo">
+        <div className='container'>
+          <div className='hualogo'>
             <p>账号注册</p>
           </div>
-          <div className="formgroup">
-            <div className="formgroup-input">
+          <div className='formgroup'>
+            <div className='formgroup-input'>
               <input
-                type="text"
-                placeholder="请输入账号"
+                type='text'
+                placeholder='请输入账号'
                 ref={el => (this.users = el)}
               />
             </div>
@@ -103,19 +104,19 @@ class Register extends React.PureComponent {
               <div className="formgroup-btn">获取验证码</div>
             </div>
           </div> */}
-          <div className="formgroup">
-            <div className="formgroup-input">
+          <div className='formgroup'>
+            <div className='formgroup-input'>
               <input
-                type="password"
-                placeholder="请设置密码"
+                type='password'
+                placeholder='请设置密码'
                 ref={el => (this.password = el)}
               />
             </div>
           </div>
-          <div className="form-btn">
+          <div className='form-btn'>
             <Button
               onClick={this.RegisterClick}
-              type="warning"
+              type='warning'
               style={{
                 borderRadius: "50px",
                 backgroundColor: "#ff734c"
@@ -124,38 +125,38 @@ class Register extends React.PureComponent {
               注册
             </Button>
           </div>
-          <div className="flex">
+          <div className='flex'>
             {/* <div className="flex-left">
               账号密码登录
               <i className="iconfont icon-tiaozhuanqianwangyoujiantouxiangyouxiayibuxianxing"></i>
             </div> */}
-            <div className="flex-right">
-              <Link to="/login">已有帐号，去登录</Link>
-              <i className="iconfont icon-tiaozhuanqianwangyoujiantouxiangyouxiayibuxianxing"></i>
+            <div className='flex-right'>
+              <Link to='/login'>已有帐号，去登录</Link>
+              <i className='iconfont icon-tiaozhuanqianwangyoujiantouxiangyouxiayibuxianxing'></i>
             </div>
           </div>
         </div>
         {/* 其他登录方式 */}
-        <div className="other">
-          <div className="other-item inline">
-            <a href="https://m.hua.com/Passport/QQ/Login">
-              <i className="iconfont icon-QQ"></i>
+        <div className='other'>
+          <div className='other-item inline'>
+            <a href='https://m.hua.com/Passport/QQ/Login'>
+              <i className='iconfont icon-QQ'></i>
               <span>QQ</span>
             </a>
           </div>
-          <div className="other-item">
+          <div className='other-item'>
             <span>|</span>
           </div>
-          <div className="other-item">
-            <a href="https://m.hua.com/Passport/Alipay/Login">
-              <i className="iconfont icon-zhifubao"></i>
+          <div className='other-item'>
+            <a href='https://m.hua.com/Passport/Alipay/Login'>
+              <i className='iconfont icon-zhifubao'></i>
               <span>支付宝</span>
             </a>
           </div>
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default Register;
+export default Register

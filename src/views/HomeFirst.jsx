@@ -2,12 +2,13 @@ import React from "react"
 import { NavBar, Carousel } from "antd-mobile"
 import "./HomeFirst.less"
 import Product from "./Product"
-
+// import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view"
 // ==========================================================================================================
 
 class HomeFirst extends React.PureComponent {
   // state 及其他数据
   state = {
+    isShow: true,
     data: [
       "18_youflower_m.jpg?830",
       "19_day1111_m.jpg",
@@ -39,34 +40,85 @@ class HomeFirst extends React.PureComponent {
     ]
   }
 
+  // clickToScroll = () => {
+  //   //先用measure测量出位置
+  //   this.refs.totop.measure((fx, fy, width, height, px, py) => {
+  //     console.log("Component width is: " + width)
+  //     console.log("Component height is: " + height)
+  //     console.log("X offset to frame: " + fx)
+  //     console.log("Y offset to frame: " + fy)
+  //     console.log("X offset to page: " + px)
+  //     console.log("Y offset to page: " + py)
+  //     //然后用scrollTo跳转到对应位置
+  //     //x是水平方向
+  //     //y是垂直方向
+  //     this.myScrollView.scrollTo({ x: px, y: py, animated: true })
+  //   })
+  // }
   // ============================================================================================
 
+  // handlelink = ev => {
+  //   // let value = e.target.value
+  //   // console.log(value)
+  //   this.coverRef.current.addEventListener(
+  //     "touchmove",
+  //     ev => ev.preventDefault(),
+  //     { passive: false }
+  //   )
+  // }
+
+  // ===============================================================================================
+
   render() {
-    const { data, flows, loves, friends, picts } = this.state
+    const { data, flows, loves, friends, picts, isShow } = this.state
     return (
       <div className='page-first'>
+        {/* <Container>
+          <KeyboardAwareScrollView>
+            <ScrollView
+              horizontal={true}
+              ref={view => {
+                this.myScrollView = view
+              }}
+            >
+              <View></View>
+              <View ref={view => (this.totop = view)}>想跳转的位置</View>
+            </ScrollView>
+          </KeyboardAwareScrollView>
+          <Footer>
+            <Button onPress={this.clickToScroll}>点击滑动到指定位置</Button>
+          </Footer>
+        </Container> */}
+
+        {/* ======================================================================================== */}
+
         {/* <h1>第一个页面</h1> */}
 
         {/* 导航栏 */}
         <NavBar
           className='ww-nav'
           mode='light'
-          icon={<i className='iconfont icon-009'></i>}
+          icon={<i key="ileft" className='iconfont icon-009'></i>}
           onLeftClick={() => console.log("onLeftClick")}
-          rightContent={[<i className='iconfont icon-kefu'></i>]}
+          rightContent={[<i key="iright" className='iconfont icon-kefu'></i>]}
         >
           <div className='picture'>
-            <img src='https://m.hua.com/content/vue/login/static/img/m_hualogo.png' />
+            <img
+              src='https://m.hua.com/content/vue/login/static/img/m_hualogo.png'
+              alt=''
+            />
           </div>
         </NavBar>
 
         {/* 轮播图 */}
         <Carousel className='banner' autoplay infinite>
-          {data.map(item => (
-            <img
-              src={`https://img02.hua.com/slider/${item}`}
-              alt='设计师鲜花'
-            />
+          {data.map((item, index) => (
+            <a href='' key={index} onMouseMove={this.handlelink}>
+              <img
+                src={`https://img02.hua.com/slider/${item}`}
+                alt='设计师鲜花'
+              />
+            </a>
           ))}
 
           {/* <img src="" alt=""/> */}
@@ -94,8 +146,8 @@ class HomeFirst extends React.PureComponent {
 
         {/* 分类 */}
         <div className='sorts'>
-          {picts.map(item => (
-            <dl>
+          {picts.map((item, index) => (
+            <dl key={index}>
               <dt className={`iconfont icon-${item.pic}`}></dt>
               <dd>{item.tit}</dd>
             </dl>
@@ -106,15 +158,15 @@ class HomeFirst extends React.PureComponent {
 
         {/* 我是从 一秒选花 开始到 新品来袭 的 父元素 */}
         <div className='all'>
-          {/* 一秒选花 */}
+          {/* 一秒选花 */}~
           <div className='title'>
-            <i></i>一秒选花
+            <i></i>一秒选花~
           </div>
 
           {/* 送花给亲朋好友 */}
           <div className='friends'>
-            {friends.map(pop => (
-              <a href=''>
+            {friends.map((pop, index) => (
+              <a href='' key={index}>
                 <img
                   src={`https://img02.hua.com/m/home/img/m_home_use_${pop.pic}.png`}
                 />
@@ -125,8 +177,8 @@ class HomeFirst extends React.PureComponent {
 
           {/* 节日送花 */}
           <div className='active'>
-            {loves.map(pop => (
-              <a className='newFlower' href=''>
+            {loves.map((pop, index) => (
+              <a className='newFlower' href='' key={index}>
                 <img
                   src={`https://img02.hua.com/m/home/img/m_home_use_${pop.pic}2.png`}
                 />
@@ -139,7 +191,7 @@ class HomeFirst extends React.PureComponent {
           <div className='ww-hot'>
             <a href=''>
               <p>热销榜</p>
-              <p>集万千宠爱</p>
+              <p className='little'>集万千宠爱</p>
               <div className='hot-bottom'>
                 <span>大家都在买</span>
                 <span>热销10.9万束</span>
@@ -147,7 +199,7 @@ class HomeFirst extends React.PureComponent {
             </a>
             <a href=''>
               <p>特价专区</p>
-              <p>超值好货</p>
+              <p className='little'>超值好货</p>
               <div className='hot-bottom'>
                 <span>限时直降</span>
                 <span>
@@ -160,8 +212,8 @@ class HomeFirst extends React.PureComponent {
 
           {/* 新品来袭 */}
           <div className='news'>
-            {flows.map(pop => (
-              <a className='newFlower' href=''>
+            {flows.map((pop, index) => (
+              <a className='newFlower' href='' key={index}>
                 <img
                   src={`https://img02.hua.com/m/home/img/m_home_category_${pop.pic}.png`}
                 />
@@ -174,8 +226,21 @@ class HomeFirst extends React.PureComponent {
         {/* ==================================================================================================== */}
 
         <Product></Product>
+
+        <div
+          className='scroll-Top'
+          // onClick={this.handleScroll.bind(this, isShow)}
+        >
+          <i className='iconfont icon-zhidingjiantou'></i>
+        </div>
       </div>
     )
   }
+
+  // handleScroll = isShow => {
+  //   if (scrollTop > 100) {
+  //     isShow: false
+  //   }
+  // }
 }
 export default HomeFirst
