@@ -13,7 +13,10 @@ class HomeCart extends React.Component {
       cartList: [],
       isBigger:false
     }
+    let a = window.localStorage.getItem("getFlowers")
+    console.log(a)
   }
+
   render() {
     let userInfo
 

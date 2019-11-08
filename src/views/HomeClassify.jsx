@@ -20,20 +20,20 @@ class HomeClassify extends React.Component {
   }
   render() {
     return (
-      <div className="page-Classify">
+      <div className='page-Classify'>
         <header>
-          <div className="headerBar">
-            <span className="iconfont  icon-fanhui"></span>
+          <div className='headerBar'>
+            <span className='iconfont  icon-fanhui'></span>
           </div>
 
-          <div className="page-content">
-            <div className="headerbar-content-left">
-              <i className="iconfont icon-sousuo"></i>
+          <div className='page-content'>
+            <div className='headerbar-content-left'>
+              <i className='iconfont icon-sousuo'></i>
             </div>
-            <div className="headerbar-content-center">
+            <div className='headerbar-content-center'>
               <input
-                type="search"
-                placeholder="蛋糕，搜索，礼品"
+                type='search'
+                placeholder='蛋糕，搜索，礼品'
                 maxLength={8}
               />
             </div>
@@ -63,8 +63,8 @@ const TabExample = props => {
       <WhiteSpace />
       <Tabs
         tabs={tabs}
-        tabBarPosition="left"
-        tabDirection="vertical"
+        tabBarPosition='left'
+        tabDirection='vertical'
         onChange={(tab, index) => {
           console.log("onChange", index, tab)
         }}
@@ -72,13 +72,12 @@ const TabExample = props => {
           console.log("onTabClick", index, tab)
         }}
       >
-
         {props.bar.map(item => {
           return (
             <div
               style={{
                 // display: "flex",
-                 alignItems: "center",
+                alignItems: "center",
                 justifyContent: "center",
                 backgroundColor: "#fff"
               }}
