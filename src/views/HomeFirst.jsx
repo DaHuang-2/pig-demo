@@ -41,6 +41,11 @@ class HomeFirst extends React.PureComponent {
 
   // ============================================================================================
 
+  handlelink = e => {
+    let value = e.target.value
+    console.log(value)
+    e.preventDefault()
+  }
   render() {
     const { data, flows, loves, friends, picts } = this.state
     return (
@@ -56,17 +61,22 @@ class HomeFirst extends React.PureComponent {
           rightContent={[<i className='iconfont icon-kefu'></i>]}
         >
           <div className='picture'>
-            <img src='https://m.hua.com/content/vue/login/static/img/m_hualogo.png' />
+            <img
+              src='https://m.hua.com/content/vue/login/static/img/m_hualogo.png'
+              alt=''
+            />
           </div>
         </NavBar>
 
         {/* 轮播图 */}
         <Carousel className='banner' autoplay infinite>
-          {data.map(item => (
-            <img
-              src={`https://img02.hua.com/slider/${item}`}
-              alt='设计师鲜花'
-            />
+          {data.map((item, index) => (
+            <a href='' key={index} onClick={this.handlelink}>
+              <img
+                src={`https://img02.hua.com/slider/${item}`}
+                alt='设计师鲜花'
+              />
+            </a>
           ))}
 
           {/* <img src="" alt=""/> */}
@@ -94,8 +104,8 @@ class HomeFirst extends React.PureComponent {
 
         {/* 分类 */}
         <div className='sorts'>
-          {picts.map(item => (
-            <dl>
+          {picts.map((item, index) => (
+            <dl key={index}>
               <dt className={`iconfont icon-${item.pic}`}></dt>
               <dd>{item.tit}</dd>
             </dl>
@@ -113,8 +123,8 @@ class HomeFirst extends React.PureComponent {
 
           {/* 送花给亲朋好友 */}
           <div className='friends'>
-            {friends.map(pop => (
-              <a href=''>
+            {friends.map((pop, index) => (
+              <a href='' key={index}>
                 <img
                   src={`https://img02.hua.com/m/home/img/m_home_use_${pop.pic}.png`}
                 />
@@ -125,8 +135,8 @@ class HomeFirst extends React.PureComponent {
 
           {/* 节日送花 */}
           <div className='active'>
-            {loves.map(pop => (
-              <a className='newFlower' href=''>
+            {loves.map((pop, index) => (
+              <a className='newFlower' href='' key={index}>
                 <img
                   src={`https://img02.hua.com/m/home/img/m_home_use_${pop.pic}2.png`}
                 />
@@ -136,7 +146,7 @@ class HomeFirst extends React.PureComponent {
           </div>
 
           {/* hot 热销 */}
-          <div className='ww-hot'>
+          <div className='ww-hot'> 
             <a href=''>
               <p>热销榜</p>
               <p>集万千宠爱</p>
@@ -160,8 +170,8 @@ class HomeFirst extends React.PureComponent {
 
           {/* 新品来袭 */}
           <div className='news'>
-            {flows.map(pop => (
-              <a className='newFlower' href=''>
+            {flows.map((pop, index) => (
+              <a className='newFlower' href='' key={index}>
                 <img
                   src={`https://img02.hua.com/m/home/img/m_home_category_${pop.pic}.png`}
                 />
