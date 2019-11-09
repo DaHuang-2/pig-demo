@@ -2,7 +2,7 @@ import React from "react"
 import "./HomeClassify.less"
 import { Tabs, WhiteSpace } from "antd-mobile"
 import HomeDetail from "./HomeDetail"
-import { Route, Switch } from "react-router-dom"
+import { Route, Switch,Link } from "react-router-dom"
 import axios from "axios"
 
 const tabs = [
@@ -23,7 +23,9 @@ class HomeClassify extends React.Component {
       <div className='page-Classify'>
         <header>
           <div className='headerBar'>
+            <Link to="/">
             <span className='iconfont  icon-fanhui'></span>
+            </Link>
           </div>
 
           <div className="page-content "style={{ borderRadius:"20px",marginRight:"5px",padding:"0px 20px"}}>
@@ -85,7 +87,9 @@ const TabExample = props => {
               }}
             >
                <div className="zp-all">
+                 <Link to="/detail">
                 <img src={item.url} alt=""/>
+                </Link>
                 </div>
                <div className="zp-pic">
                 {/* 第一竖列 */}
